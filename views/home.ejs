@@ -1,7 +1,45 @@
 <% include ./partials/header %> 
 
-    <div class="jumbotron">
-        <h3>This is HOMEPAGE!</h3>
+<div class="jumbotron text-center">
+    <h3>Total <strong>Recycleable Waste</strong> Collected !</h3>
+    <div class="row justify-content-center">
+            <%for(var i=0;i<(digits.length);i++){%>
+                <div class="alert alert-info digits text-center">
+                    <%= digits[i] %>
+                </div>
+            <%}%>
+        </div>
     </div>
-
-<% include ./partials/footer %> 
+    <div class="row">
+        <% for(var i = 0;i<(datas.length);i++){ %>        
+            <div class="col-sm-12 col-md-6 div-lg-4 col-xl-3">
+                <!-- Card Dark -->
+                <div class="card">
+                    
+                    <!-- Card image -->
+                    <div class="view overlay">
+                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2821%29.jpg" alt="Card image cap">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    
+                    <!-- Card content -->
+                    <div class="card-body elegant-color white-text rounded-bottom">
+                        <!-- Title -->
+                        <h4 class="card-title"><%=datas[i].district%></h4>
+                        <hr class="hr-light">
+                        <!-- Text -->
+                        <p class="card-text white-text mb-4">Wate Collected : <%=datas[i].waste%></p>
+                        <p class="card-text white-text mb-4">Wate Recycled : <%=datas[i].recycled%></p>
+                        
+                    </div>
+                    
+                </div>
+                <!-- Card Dark -->
+            </div>
+            <% } %>
+        </div>
+        
+        <% include ./partials/footer %> 
+        

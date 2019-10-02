@@ -2,3 +2,7 @@ body{
     padding-top: 70px;
     background-color: #ebebeb
 }
+.digits{
+    margin: 2px 5px;
+    font-size: 2rem;
+}
